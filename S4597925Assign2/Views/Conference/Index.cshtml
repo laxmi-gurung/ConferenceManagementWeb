@@ -1,0 +1,36 @@
+﻿@model IEnumerable<S4597925Assign2.Data.Model.Conference>
+@{
+    ViewData["Title"] = "Conference Page";
+}
+
+    <div class="text-center" , style="background-color: lightslategray;">
+        <h1 class="display-4" , style="color:white;">Conferences</h1>
+    </div>
+
+    <div style="overflow-x:auto">
+        <table style="width:100%">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Date</th>
+                    <th>Code</th>
+                    <th>Title</th>
+                    <th>Location</th>
+                    <th>Organizer</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var conference in Model)
+                {
+                    <tr>
+                        <td>@conference.Id</td>
+                        <td>@conference.Date</td>
+                        <td>@conference.Code</td>
+                        <td>@conference.Title</td>
+                        <td>@conference.Location</td>
+                        <td>@Html.ActionLink((conference.OrganizerName), "details", "organizer", new { id = (@conference.OrganizerID) })</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>

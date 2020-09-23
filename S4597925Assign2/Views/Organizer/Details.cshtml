@@ -1,0 +1,33 @@
+﻿@model S4597925Assign2.Data.Interfaces.OrganizerRepository
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <div class="text-center" , style="background-color: lightslategray;">
+        <h1 class="display-4" , style="color:white;">Organizer's Details</h1>
+    </div>
+    <a class="btn btn-success mt-5" style="margin: 10px" asp-controller="Organizer" asp-action="Create">Add New Organizer</a>
+    <div class="col-sm-8">
+        <div class="card">
+            <div class="card-header text-center">
+                <h1>@Model.Organizer.Name</h1>
+            </div>
+
+            <div class="card-body text-center">
+                <h4>Organizer's ID: @Model.Organizer.Id</h4>
+                <h4>Email: @Model.Organizer.Email</h4>
+                <h4>Conference: @Model.Organizer.ConferenceName.</h4>
+
+            </div>
+
+            <div class="card-footer text-center">
+                <a href="/Organizer/index" class="btn btn-primary">List of Organizers</a>
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

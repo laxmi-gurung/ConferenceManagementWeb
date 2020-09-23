@@ -1,0 +1,38 @@
+﻿@model S4597925Assign2.Data.Model.Attendee
+
+@{
+    ViewBag.Title = "Create Attendee";
+}
+
+<form asp-controller="Organizer" asp-action="Create" method="post" class="mt-3">
+    <div class="form-group row">
+        <label asp-for="Name" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="Name" class="form-control" placeholder="Name" />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="Email" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <input asp-for="Email" class="form-control" placeholder="Email" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label asp-for="ConferenceName" class="col-sm-2 col-form-label"></label>
+        <div class="col-sm-10">
+            <select asp-for="ConferenceName" class="custom-select mr-sm-2"
+                    asp-items="Html.GetEnumSelectList<S4597925Assign2.Data.Model.ConferenceTitles>()">
+                <option value="">Please Select</option>
+            </select>
+            <span asp-validation-for="ConferenceName" class="text-danger"></span>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="btn-group col-md-offset-2 col-md-6">
+            <input class="btn btn-default" type="submit" value="Return" asp-controller="Attendee" asp-action="Empty" />
+            <input class="btn btn-success" type="submit" value="Register" />
+        </div>
+    </div>
+</form>
